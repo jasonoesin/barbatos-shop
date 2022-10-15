@@ -1,0 +1,358 @@
+<?php
+
+namespace Database\Seeders;
+
+use Carbon\Carbon;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class ProductSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table("products")->insert(
+            [
+                // Tech Category (4 product, 3 loop for more data)
+                [
+                    'name'=>'USB Type-C',
+                    'price'=> 25000,
+                    'detail' => 'USB Type-C Data Cable or Charge Cable',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/1.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Gamepad USB',
+                    'price'=> 39800,
+                    'detail' => 'Gamepad M-tech',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/2.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'INTEL CORE I3 12100F',
+                    'price'=> 850000,
+                    'detail' => 'PROCESSOR INTEL CORE I3 12100F 3.30 GHz BOX SOCKET 1700 GARANSI 3TAHUN',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/3.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'BASEUS ADAMAN FAST CHARGING POWER BANK',
+                    'price'=> 40000,
+                    'detail' => 'BASEUS ADAMAN FAST CHARGING POWER BANK QUICK CHARGE 4.0 3.0 TYPE C PD - black 20 000mAH',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/4.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+
+                [
+                    'name'=>'USB Type-C',
+                    'price'=> 25000,
+                    'detail' => 'USB Type-C Data Cable or Charge Cable',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/1.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Gamepad USB',
+                    'price'=> 39800,
+                    'detail' => 'Gamepad M-tech',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/2.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'INTEL CORE I3 12100F',
+                    'price'=> 850000,
+                    'detail' => 'PROCESSOR INTEL CORE I3 12100F 3.30 GHz BOX SOCKET 1700 GARANSI 3TAHUN',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/3.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'BASEUS ADAMAN FAST CHARGING POWER BANK',
+                    'price'=> 40000,
+                    'detail' => 'BASEUS ADAMAN FAST CHARGING POWER BANK QUICK CHARGE 4.0 3.0 TYPE C PD - black 20 000mAH',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/4.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+
+                [
+                    'name'=>'USB Type-C',
+                    'price'=> 25000,
+                    'detail' => 'USB Type-C Data Cable or Charge Cable',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/1.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Gamepad USB',
+                    'price'=> 39800,
+                    'detail' => 'Gamepad M-tech',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/2.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'INTEL CORE I3 12100F',
+                    'price'=> 850000,
+                    'detail' => 'PROCESSOR INTEL CORE I3 12100F 3.30 GHz BOX SOCKET 1700 GARANSI 3TAHUN',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/3.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'BASEUS ADAMAN FAST CHARGING POWER BANK',
+                    'price'=> 40000,
+                    'detail' => 'BASEUS ADAMAN FAST CHARGING POWER BANK QUICK CHARGE 4.0 3.0 TYPE C PD - black 20 000mAH',
+                    'category'=> 'Electronics',
+                    'file_path' => '/products/4.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+
+                // Provision Category (4 product, 3 loop for more data)
+                [
+                    'name'=>'Dua Tani Beras Merah',
+                    'price'=> 88500,
+                    'detail' => 'Beras Merah Dua Tani 5 Kg - HALAL - High Quality',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/5.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Minyak Goreng Sania 1 Liter',
+                    'price'=> 19000,
+                    'detail' => 'Minyak Goreng Sania 1 Liter - Sembako Jogja - Fortune',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/6.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'TELUR AYAM NEGERI ISI 10PCS',
+                    'price'=> 25000,
+                    'detail' => 'SEMBAKO TELUR AYAM NEGERI ISI 10PCS MURAH',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/7.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Finna Sambal Terasi',
+                    'price'=> 17935,
+                    'detail' => 'Sambal Tradisional Finna dibuat dari perpaduan sempurna cabai pilihan berkualitas tinggi dengan berbagai macam rempah-rempah asli Indonesia yang menghasilkan rasa pedas yang khas.',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/7.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+
+                [
+                    'name'=>'Dua Tani Beras Merah',
+                    'price'=> 88500,
+                    'detail' => 'Beras Merah Dua Tani 5 Kg - HALAL - High Quality',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/5.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Minyak Goreng Sania 1 Liter',
+                    'price'=> 19000,
+                    'detail' => 'Minyak Goreng Sania 1 Liter - Sembako Jogja - Fortune',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/6.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'TELUR AYAM NEGERI ISI 10PCS',
+                    'price'=> 25000,
+                    'detail' => 'SEMBAKO TELUR AYAM NEGERI ISI 10PCS MURAH',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/7.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Finna Sambal Terasi',
+                    'price'=> 17935,
+                    'detail' => 'Sambal Tradisional Finna dibuat dari perpaduan sempurna cabai pilihan berkualitas tinggi dengan berbagai macam rempah-rempah asli Indonesia yang menghasilkan rasa pedas yang khas.',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/7.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+
+                [
+                    'name'=>'Dua Tani Beras Merah',
+                    'price'=> 88500,
+                    'detail' => 'Beras Merah Dua Tani 5 Kg - HALAL - High Quality',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/5.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Minyak Goreng Sania 1 Liter',
+                    'price'=> 19000,
+                    'detail' => 'Minyak Goreng Sania 1 Liter - Sembako Jogja - Fortune',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/6.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'TELUR AYAM NEGERI ISI 10PCS',
+                    'price'=> 25000,
+                    'detail' => 'SEMBAKO TELUR AYAM NEGERI ISI 10PCS MURAH',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/7.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Finna Sambal Terasi',
+                    'price'=> 17935,
+                    'detail' => 'Sambal Tradisional Finna dibuat dari perpaduan sempurna cabai pilihan berkualitas tinggi dengan berbagai macam rempah-rempah asli Indonesia yang menghasilkan rasa pedas yang khas.',
+                    'category'=> 'Provision',
+                    'file_path' => '/products/7.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                // Fashion (4 product, 3 loop for more data)
+                [
+                    'name'=>'Sweety Bronze Pants',
+                    'price'=> 46900,
+                    'detail' => 'SWEETY BRONZE PANTS M34 L30 XL26 XXL24 - S36',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/9.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Sepatu Fashion FlyKnit SlipOn',
+                    'price'=> 120900,
+                    'detail' => 'SFOS Premium - Sepatu Fashion FlyKnit SlipOn AQYAR567 (1KG Muat 2 PSG) - Merah Muda, 37',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/10.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'MICHAEL Celana Joger Pria SLIM FIT',
+                    'price'=> 89900,
+                    'detail' => 'MICHAEL Celana Joger Pria SLIM FIT SKINNY Fashion Korea Okechuku - Hitam, S/M',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/11.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'CINCIN FASHION TERANG JAYA',
+                    'price'=> 954000,
+                    'detail' => 'CINCIN FASHION TERANG JAYA emas kuning 700/16k 1.35gr',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/12.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+
+                [
+                    'name'=>'Sweety Bronze Pants',
+                    'price'=> 46900,
+                    'detail' => 'SWEETY BRONZE PANTS M34 L30 XL26 XXL24 - S36',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/9.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Sepatu Fashion FlyKnit SlipOn',
+                    'price'=> 120900,
+                    'detail' => 'SFOS Premium - Sepatu Fashion FlyKnit SlipOn AQYAR567 (1KG Muat 2 PSG) - Merah Muda, 37',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/10.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'MICHAEL Celana Joger Pria SLIM FIT',
+                    'price'=> 89900,
+                    'detail' => 'MICHAEL Celana Joger Pria SLIM FIT SKINNY Fashion Korea Okechuku - Hitam, S/M',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/11.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'CINCIN FASHION TERANG JAYA',
+                    'price'=> 954000,
+                    'detail' => 'CINCIN FASHION TERANG JAYA emas kuning 700/16k 1.35gr',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/12.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+
+                [
+                    'name'=>'Sweety Bronze Pants',
+                    'price'=> 46900,
+                    'detail' => 'SWEETY BRONZE PANTS M34 L30 XL26 XXL24 - S36',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/9.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'Sepatu Fashion FlyKnit SlipOn',
+                    'price'=> 120900,
+                    'detail' => 'SFOS Premium - Sepatu Fashion FlyKnit SlipOn AQYAR567 (1KG Muat 2 PSG) - Merah Muda, 37',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/10.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'MICHAEL Celana Joger Pria SLIM FIT',
+                    'price'=> 89900,
+                    'detail' => 'MICHAEL Celana Joger Pria SLIM FIT SKINNY Fashion Korea Okechuku - Hitam, S/M',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/11.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name'=>'CINCIN FASHION TERANG JAYA',
+                    'price'=> 954000,
+                    'detail' => 'CINCIN FASHION TERANG JAYA emas kuning 700/16k 1.35gr',
+                    'category'=> 'Fashion',
+                    'file_path' => '/products/12.jpg',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+            ]
+        );
+        //
+    }
+}
