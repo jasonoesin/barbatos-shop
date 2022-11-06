@@ -30,6 +30,7 @@ Route::group(['/'], function(){
         Route::get('/category/{cat}', [CategoryController::class, 'show']);
 
         Route::get('/manage/', [ProductController::class, 'manage']);
+        Route::get('/manage/{query}', [ProductController::class, 'manageWithQuery']);
     });
 
     //Product Resource

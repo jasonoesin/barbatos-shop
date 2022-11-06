@@ -1,7 +1,11 @@
 @extends('view-template')
 
+@section('title',"Product")
+
 @section('content')
 
+
+@if($p)
 <div class="w-full h-full flex justify-center items-center bg-gray-300">
         <form class="flex flex-row w-[50rem] max-h-[1rem]] bg-gray-100 p-4 overflow-hidden drop-shadow-lg">
             <div class="left flex justify-center items-center">
@@ -19,5 +23,12 @@
             </div>
         </form>
 </div>
+@elseif($p == null)
+    <div class="w-full h-full flex justify-center items-center bg-gray-300">
+        <div class="flex flex-row w-[50rem] max-h-[1rem]] bg-gray-100 p-4 overflow-hidden drop-shadow-lg">
+            <h1 class="font-bold">No Product Found ...</h1>
+        </div>
+    </div>
+@endif
 
 @endsection

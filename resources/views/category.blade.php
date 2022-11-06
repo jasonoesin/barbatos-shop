@@ -1,4 +1,5 @@
 @extends('view-template')
+@section('title',$products[0] != null ? $products[0]->category : "Error")
 
 @section('content')
 
@@ -36,16 +37,23 @@
 </head>
 <body>
 
-
-
-<div class="flex flex-wrap gap-3">
-    @foreach($products as $p)
-        <a href="{{url("/product/$p->id")}}" class="w-[10rem] max-h-[1rem]] p-4 bg-gray-100 drop-shadow-lg">
-            <img src="{{ url("storage/images$p->file_path") }}" alt="Image"/>
-            <div class="whitespace-nowrap text-ellipsis overflow-hidden h-6">{{$p->name}}</div>
-            <div class="">Rp {{$p->price}}</div>
-        </a>
-    @endforeach
+<div class="bg-gray-200">
+    <div class="p-2 bg-gray-400 text-white">
+        {{$products[0] != null ? $products[0]->category : "Error"}}
+    </div>
+    <div class="flex flex-wrap gap-3 p-2">
+        @forelse($products as $p)
+            <a href="{{url("/product/$p->id")}}" class="w-[10rem] max-h-[1rem]] p-4 bg-gray-100 drop-shadow-lg">
+                <img src="{{ url("storage/images$p->file_path") }}" alt="Image"/>
+                <div class="whitespace-nowrap text-ellipsis overflow-hidden h-6">{{$p->name}}</div>
+                <div class="">Rp {{$p->price}}</div>
+            </a>
+        @empty
+            <p>
+                Category Not Found ...
+            </p>
+        @endforelse
+    </div>
 </div>
 
 

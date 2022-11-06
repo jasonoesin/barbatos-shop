@@ -1,6 +1,8 @@
 
 @extends('view-template')
 
+@section('title',"Search Product")
+
 @section('content')
 
 <form action="/search">

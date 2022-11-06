@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -35,11 +36,11 @@ class ProductController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
         //
+        return view('product_add');
     }
 
     /**
@@ -50,14 +51,30 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+        $directories =  Storage::files("public/images/products");
+
+        $last = count($directories) + 1;
+
+
         //
+        $product = Product::create([
+            'name'=> $request->name,
+            'price'=> $request->price,
+            'detail' => $request->detail,
+            'category' => $request->genre,
+            'file_path' => "/products/$last.jpg"
+        ]);
+
+        $file = $request->file('file')->storeAs('public/images/products',"$last.jpg");
+
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
@@ -74,11 +91,16 @@ class ProductController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
+        $current = Product::find($id);
+
+        return view('product_edit')->with(
+            [
+                'p'=> $current
+            ]);
     }
 
     /**
@@ -119,6 +141,14 @@ class ProductController extends Controller
     public function manage(){
 
         $products = Product::all();
+
+        return view("manage")->with([
+            'products'=> $products
+        ]);
+    }
+
+    public function manageWithQuery($query){
+        $products = Product::where("name","like","%$query%")->get();
 
         return view("manage")->with([
             'products'=> $products

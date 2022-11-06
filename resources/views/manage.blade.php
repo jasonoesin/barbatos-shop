@@ -1,11 +1,21 @@
 @extends('view-template')
 
+@section('title',"Manage Products")
+
 @section('content')
 
 
     <div class="flex flex-col items-center gap-2">
 
-        <input type="text" class="px-2">
+
+        <div class="flex gap-[19rem]">
+
+            <div class="flex items-center">
+                <input placeholder="Search ..." type="text" class="px-4 h-10 rounded">
+            </div>
+            <a class="bg-gray-400 px-4 py-2 text-gray-50 rounded-2xl" href="{{url('./product/create')}}">Add Product</a>
+        </div>
+
 
         @foreach($products as $p)
                     <div class="product bg-gray-100 max-w-[40rem] w-[40rem] flex relative">
