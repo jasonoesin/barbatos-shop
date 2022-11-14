@@ -5,9 +5,10 @@
 @section('content')
 
 <div class="w-full h-[110vh] flex justify-center items-center bg-gray-300">
-        <form class="flex flex-col gap-3 w-[50rem] max-h-[1rem]] bg-gray-100 p-4 overflow-hidden drop-shadow-lg">
+    <form enctype="multipart/form-data" method="post" action="{{route("product.update", $p->id)}}" class="flex flex-col gap-3 w-[50rem] max-h-[1rem]] bg-gray-100 p-4 overflow-hidden drop-shadow-lg">
+            @csrf
+            @method('PUT')
             <div class="font-bold">Update Product</div>
-
             <div class="">Name</div>
             <input required name="name" value="{{$p->name}}" class="px-2 border-2 border-gray-400" type="text">
 

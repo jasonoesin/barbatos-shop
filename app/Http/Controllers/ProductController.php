@@ -106,13 +106,38 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        // Updated File Path
+
+        if($request->file('file')){
+            $directories =  Storage::files("public/images/products");
+            $last = count($directories) + 1;
+            $request->file('file')->storeAs('public/images/products',"$last.jpg");
+
+            Product::find($id)->update([
+                'name'=> $request->name,
+                'price'=> $request->price,
+                'detail' => $request->detail,
+                'category' => $request->genre,
+                'file_path' => "/products/$last.jpg"
+            ]);
+        }else{
+            Product::find($id)->update([
+                'name'=> $request->name,
+                'price'=> $request->price,
+                'detail' => $request->detail,
+                'category' => $request->genre,
+            ]);
+        }
+
+        $product = Product::find($id);
+
+        return view('product')->with(
+            [
+                'p'=> $product
+            ]);
     }
 
     /**
