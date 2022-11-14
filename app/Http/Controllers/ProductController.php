@@ -144,11 +144,14 @@ class ProductController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
+        Product::destroy($id);
+
+        return redirect()->back();
     }
 
     public function search(Request $request){
