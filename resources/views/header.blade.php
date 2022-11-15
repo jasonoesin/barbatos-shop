@@ -14,6 +14,9 @@
         <a href="{{url('./product/manage')}}" class="text-gray-400">Manage Products</a>
     </div>
     <div class="flex gap-3">
+        <div class="">
+            <a href={{url('/cart')}}>Cart</a>
+        </div>
         <div class="">Login</div>
         <div class="">Register</div>
     </div>

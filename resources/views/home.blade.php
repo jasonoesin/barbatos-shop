@@ -9,7 +9,6 @@
     <input value="{{ app('request')->input('name') }}" name="name" placeholder="Search for products ..." class="w-full mb-3 rounded-sm p-3" type="text">
 </form>
 
-{{--{{dd($category)}}--}}
 @if($category->contains('category', 'Electronics'))
 <div class="bg-gray-200">
     <div class="p-2 bg-gray-400 text-white">

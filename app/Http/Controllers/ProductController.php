@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     */
     public function index()
     {
         $category = DB::table('products')
@@ -33,10 +29,6 @@ class ProductController extends Controller
             ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     */
     public function create()
     {
         //
@@ -71,11 +63,6 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     */
     public function show($id)
     {
         //
@@ -87,11 +74,6 @@ class ProductController extends Controller
             ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     */
     public function edit($id)
     {
         //
@@ -103,10 +85,6 @@ class ProductController extends Controller
             ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     */
     public function update(Request $request, $id)
     {
         // Updated File Path
@@ -140,12 +118,6 @@ class ProductController extends Controller
             ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
