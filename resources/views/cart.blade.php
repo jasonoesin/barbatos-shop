@@ -2,19 +2,19 @@
 
 @section('title',"Cart")
 
+
+
 @section('content')
     <div class="flex flex-col items-center gap-2">
-        <div class="flex gap-[19rem]">
+        @php
+            $total = 0;
+        @endphp
 
-            <div class="flex items-center">
-                <input placeholder="Search ..." type="text" class="px-4 h-10 rounded">
-            </div>
-            <a class="bg-gray-400 px-4 py-2 text-gray-50 rounded-2xl" href="{{url('./product/create')}}">Add Product</a>
-        </div>
 
         @foreach($carts as $c)
             @php
-            $p = $c->product
+            $p = $c->product;
+            $total += $c->qty * $p->price;
             @endphp
                     <div class="product bg-gray-100 max-w-[40rem] w-[40rem] flex relative">
 
@@ -46,4 +46,14 @@
                     </div>
         @endforeach
     </div>
+@endsection
+
+@section('footer')
+    <form method="post" action="{{route("history")}}" class= "gap-4 fixed bottom-0 left-0 z-10 w-full p-4 px-16 bg-white drop-shadow flex justify-center">
+        @csrf
+        <p>Total IDR : <?php echo number_format($total,0,',','.'); ?></p>
+        <button class="px-2 bg-blue-300 rounded text-white">Purchase</button>
+    </form>
+
+    <div class="mt-10"></div>
 @endsection

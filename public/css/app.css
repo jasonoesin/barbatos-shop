@@ -485,6 +485,9 @@ video {
 .right-0 {
   right: 0px;
 }
+.bottom-0 {
+  bottom: 0px;
+}
 .z-10 {
   z-index: 10;
 }
@@ -524,6 +527,9 @@ video {
 }
 .-mt-px {
   margin-top: -1px;
+}
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .box-content {
   box-sizing: content-box;
@@ -654,6 +660,9 @@ video {
 .gap-1 {
   gap: 0.25rem;
 }
+.gap-4 {
+  gap: 1rem;
+}
 .overflow-hidden {
   overflow: hidden;
 }
@@ -730,6 +739,10 @@ video {
 .bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+.bg-blue-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
 }
 .stroke-amber-500 {
   stroke: #f59e0b;

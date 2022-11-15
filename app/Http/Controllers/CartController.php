@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\History;
+use App\Models\HistoryDetail;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -11,8 +14,6 @@ class CartController extends Controller
     public function index()
     {
         // To be changed id
-//        dd(User::find(1)->carts[1]->product);
-
         return view('cart')->with(
             [
                 'carts'=> User::find(1)->carts
@@ -56,6 +57,29 @@ class CartController extends Controller
     {
         //
         Cart::find($id)->deleteOrFail();
+
+        return redirect()->back();
+    }
+
+    public function purchase()
+    {
+        // TO BE CHANGED ID
+        $carts = User::find(1)->carts;
+
+        $history = History::create([
+            "user_id" => 1
+        ]);
+
+        foreach($carts as $c){
+            HistoryDetail::create([
+                "history_id" => $history->id,
+                "product_id" => $c->product->id,
+                "qty" => $c->qty
+            ]);
+            $c->delete();
+        }
+
+
 
         return redirect()->back();
     }

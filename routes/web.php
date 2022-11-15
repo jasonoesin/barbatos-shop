@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ProductController;
 use \App\Http\Controllers\CategoryController;
 
+
+
 Route::group(['/'], function(){
     // Home
     Route::get('/', function () {
@@ -26,5 +28,6 @@ Route::group(['/'], function(){
     Route::resource('product', ProductController::class);
 
     //Cart Resource
+    Route::post('history', [CartController::class, 'purchase'])->name('history');
     Route::resource('cart', CartController::class);
 });
