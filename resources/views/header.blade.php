@@ -17,6 +17,9 @@
         <div class="">
             <a href={{url('/cart')}}>Cart</a>
         </div>
+        <div class="">
+            <a href={{url('/history')}}>History</a>
+        </div>
         <div class="">Login</div>
         <div class="">Register</div>
     </div>

@@ -61,6 +61,15 @@ class CartController extends Controller
         return redirect()->back();
     }
 
+    public function history(){
+        $histories = History::where("user_id", "=","1")->get();
+
+        return view('history')->with(
+            [
+                'histories'=> $histories
+            ]);
+    }
+
     public function purchase()
     {
         // TO BE CHANGED ID
@@ -78,8 +87,6 @@ class CartController extends Controller
             ]);
             $c->delete();
         }
-
-
 
         return redirect()->back();
     }

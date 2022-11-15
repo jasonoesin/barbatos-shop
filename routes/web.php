@@ -28,6 +28,7 @@ Route::group(['/'], function(){
     Route::resource('product', ProductController::class);
 
     //Cart Resource
+    Route::get('history', [CartController::class, 'history'])->name('history');
     Route::post('history', [CartController::class, 'purchase'])->name('history');
     Route::resource('cart', CartController::class);
 });
