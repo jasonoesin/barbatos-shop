@@ -31,7 +31,7 @@
 
 
                         <div class="absolute right-4 top-4 flex gap-1">
-                            <form method="post">
+                            <form action="{{route('cart.destroy', $c->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button>
