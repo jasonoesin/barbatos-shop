@@ -10,9 +10,9 @@
 
         <div class="flex gap-[19rem]">
 
-            <div class="flex items-center">
-                <input placeholder="Search ..." type="text" class="px-4 h-10 rounded">
-            </div>
+            <form action={{"/product/manage/" }} class="flex" items-center">
+                <input name="name" placeholder="Search ..." type="text" class="px-4 h-10 rounded">
+            </form>
             <a class="bg-gray-400 px-4 py-2 text-gray-50 rounded-2xl" href="{{url('./product/create')}}">Add Product</a>
         </div>
 

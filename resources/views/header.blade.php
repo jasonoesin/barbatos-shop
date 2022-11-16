@@ -14,14 +14,24 @@
         <a href="{{url('./product/manage')}}" class="text-gray-400">Manage Products</a>
     </div>
     <div class="flex gap-3">
-        <div class="">
-            <a href={{url('/cart')}}>Cart</a>
+
+
+        <div class="flex gap-3">
+            @if( auth()->check())
+                <a class="nav-link" href="#">{{ auth()->user()->name}}</a>
+                <div class="">
+                    <a href={{url('/cart')}}>Cart</a>
+                </div>
+                <div class="">
+                    <a href={{url('/history')}}>History</a>
+                </div>
+                <a href="{{url("/logout")}}">Logout</a>
+            @else
+                <a href="{{url("/login")}}">Login</a>
+                <a href="{{url("/register")}}">Register</a>
+            @endif
         </div>
-        <div class="">
-            <a href={{url('/history')}}>History</a>
-        </div>
-        <div class="">Login</div>
-        <div class="">Register</div>
+
     </div>
 </div>
 

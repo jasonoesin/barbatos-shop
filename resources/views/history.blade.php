@@ -5,7 +5,7 @@
 
 
 @section('content')
-    <div class="flex flex-col items-center gap-2">
+    <div class="flex flex-col items-center gap-2 pb-[5rem]">
 
 
         @foreach($histories as $h)
