@@ -5,14 +5,23 @@
 
 @section('content')
 
+    @if(session('message'))
+
+        <div class="rounded fixed bottom-2 right-2 px-6 py-3 z-[11] bg-white flex items-center gap-2 justify-center">
+            <div class="rounded-[100rem] w-5 h-5 bg-green-400"></div>
+            {{session('message')}}
+        </div>
+    @endif
+
 <form action="/search">
     <input value="{{ app('request')->input('name') }}" name="name" placeholder="Search for products ..." class="w-full mb-3 rounded-sm p-3" type="text">
 </form>
 
 @if($category->contains('category', 'Electronics'))
 <div class="bg-gray-200">
-    <div class="p-2 bg-gray-400 text-white">
+    <div class="px-4 py-2 bg-gray-400 text-white flex flex-row justify-between">
         Electronics
+        <a href="{{url("/product/category/electronics")}}" class="">View All</a>
     </div>
     <div class="flex flex-wrap gap-3 p-2">
         @foreach($electronics as $p)
@@ -34,8 +43,9 @@
 
 @if($category->contains('category', 'Provision'))
     <div class="bg-gray-200">
-        <div class="p-2 bg-gray-400 text-white">
+        <div class="px-4 py-2 bg-gray-400 text-white flex flex-row justify-between">
             Provision
+            <a href="{{url("/product/category/provision")}}" class="">View All</a>
         </div>
         <div class="flex flex-wrap gap-3 p-2">
             @foreach($provision as $p)
@@ -61,8 +71,9 @@
 
 @if($category->contains('category', 'Fashion'))
     <div class="bg-gray-200">
-        <div class="p-2 bg-gray-400 text-white">
+        <div class="px-4 py-2 bg-gray-400 text-white flex flex-row justify-between">
             Fashion
+            <a href="{{url("/product/category/fashion")}}" class="">View All</a>
         </div>
         <div class="flex flex-wrap gap-3 p-2">
             @foreach($fashion as $p)
@@ -83,5 +94,6 @@
 
     <br>
 @endif
+
 
 @endsection

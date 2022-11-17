@@ -8,6 +8,7 @@ use App\Models\HistoryDetail;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -16,7 +17,7 @@ class CartController extends Controller
         // To be changed id
         return view('cart')->with(
             [
-                'carts'=> User::find(1)->carts
+                'carts'=> User::find(Auth::user()->id)->carts
             ]);
     }
 
@@ -62,7 +63,7 @@ class CartController extends Controller
     }
 
     public function history(){
-        $histories = History::where("user_id", "=","1")->get();
+        $histories = History::where("user_id", "=",Auth::user()->id)->get();
 
         return view('history')->with(
             [
@@ -76,7 +77,7 @@ class CartController extends Controller
         $carts = User::find(1)->carts;
 
         $history = History::create([
-            "user_id" => 1
+            "user_id" => Auth::user()->id
         ]);
 
         foreach($carts as $c){

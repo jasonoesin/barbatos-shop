@@ -15,21 +15,25 @@
             </div>
             <div class="right p-3 flex flex-col gap-1">
 
-{{--                TO BE UPDATED--}}
-                <input type="hidden" name="user_id" value="{{1}}">
-{{--                TO BE UPDATED--}}
+                @if(auth()->check())
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                @endif
 
 
                 <input type="hidden" name="product" value="{{$p->id}}">
+
 
                 <div class="font-bold">{{$p->name}}</div>
                 <div class="">{{$p->detail}}</div>
                 <div class="">Rp {{$p->price}}</div>
 
-                {{--If Logged In Customer--}}
-                <input name="qty" placeholder="Quantity" required class="px-4 py-1 w-[10rem] rounded" type="number" min="0">
-                <button type="submit" class=" w-[8rem] text-white rounded-xl bg-blue-500 flex justify-center">Purchase</button>
+
+                @if(Auth::check())
+                {{--If Logged In --}}
+                    <input name="qty" placeholder="Quantity" required class="px-4 py-1 w-[10rem] rounded" type="number" min="0">
+                    <button type="submit" class=" w-[8rem] text-white rounded-xl bg-blue-500 flex justify-center">Purchase</button>
                 {{--If Logged In--}}
+                @endif
             </div>
         </form>
 </div>
