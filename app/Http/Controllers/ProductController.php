@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('isAdmin', ['except' => ['index','show', 'search']]);
+    }
+
     public function index()
     {
         $category = DB::table('products')
@@ -44,12 +49,20 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
+        $this->validate($request,
+            [
+                'name' => 'required',
+                'price' => 'required|integer',
+                'detail' => 'required',
+                'genre' => 'required',
+                'file' => 'required|mimes:jpeg,png,jpg',
+            ]);
+
         $directories =  Storage::files("public/images/products");
 
         $last = count($directories) + 1;
 
 
-        //
         $product = Product::create([
             'name'=> $request->name,
             'price'=> $request->price,
@@ -60,7 +73,10 @@ class ProductController extends Controller
 
         $file = $request->file('file')->storeAs('public/images/products',"$last.jpg");
 
-        return redirect()->back();
+        return view('product')->with(
+            [
+                'p'=> $product
+            ]);
     }
 
     public function show($id)
@@ -87,6 +103,15 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request,
+            [
+                'name' => 'required',
+                'price' => 'required|integer',
+                'detail' => 'required',
+                'genre' => 'required',
+                'file' => 'mimes:jpeg,png,jpg',
+            ]);
+
         // Updated File Path
 
         if($request->file('file')){
@@ -138,17 +163,14 @@ class ProductController extends Controller
         ]);
     }
 
-    public function manage(){
+    public function manage(Request $request){
 
-        $products = Product::all();
-
-        return view("manage")->with([
-            'products'=> $products
-        ]);
-    }
-
-    public function manageWithQuery($query){
-        $products = Product::where("name","like","%$query%")->get();
+        if ($request->has('name')) {
+            $products = Product::where("name","like","%$request->name%")->paginate(10);
+        }
+        else{
+            $products = Product::paginate(10);
+        }
 
         return view("manage")->with([
             'products'=> $products

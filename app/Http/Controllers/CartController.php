@@ -73,8 +73,7 @@ class CartController extends Controller
 
     public function purchase()
     {
-        // TO BE CHANGED ID
-        $carts = User::find(1)->carts;
+        $carts = User::find(Auth::user()->id)->carts;
 
         $history = History::create([
             "user_id" => Auth::user()->id

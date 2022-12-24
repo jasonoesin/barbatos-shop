@@ -5,12 +5,12 @@
 @section('content')
 
 
-    <div class="flex flex-col items-center gap-2">
+    <div class="flex flex-col items-center gap-2 pb-16">
 
 
         <div class="flex gap-[19rem]">
 
-            <form action={{"/product/manage/" }} class="flex" items-center">
+            <form action={{route('manage') }} class="flex" items-center">
                 <input name="name" placeholder="Search ..." type="text" class="px-4 h-10 rounded">
             </form>
             <a class="bg-gray-400 px-4 py-2 text-gray-50 rounded-2xl" href="{{url('./product/create')}}">Add Product</a>
@@ -46,5 +46,31 @@
                         </div>
                     </div>
         @endforeach
-    </div>
+
+
+
+        <style>
+            .pagination
+            {
+                margin-top: 1rem;
+                display: flex;
+            }
+
+            .pagination > * {
+                border: 1px solid lightgray;
+                background-color: white;
+                padding: 0.25rem 0.75rem;
+                color: lightskyblue;
+            }
+
+            .active{
+                background-color: lightskyblue;
+                color: white;
+            }
+
+        </style>
+
+        <div class="mt-4"></div>
+            {{$products->links()}}
+</div>
 @endsection

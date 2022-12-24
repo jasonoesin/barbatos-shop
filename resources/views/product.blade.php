@@ -30,8 +30,10 @@
 
                 @if(Auth::check())
                 {{--If Logged In --}}
-                    <input name="qty" placeholder="Quantity" required class="px-4 py-1 w-[10rem] rounded" type="number" min="0">
-                    <button type="submit" class=" w-[8rem] text-white rounded-xl bg-blue-500 flex justify-center">Purchase</button>
+                    @if(auth()->user()->role == "User")
+                        <input name="qty" placeholder="Quantity" required class="px-4 py-1 w-[10rem] rounded" type="number" min="0">
+                        <button type="submit" class=" w-[8rem] text-white rounded-xl bg-blue-500 flex justify-center">Purchase</button>
+                    @endif
                 {{--If Logged In--}}
                 @endif
             </div>

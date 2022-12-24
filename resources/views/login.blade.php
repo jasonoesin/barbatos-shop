@@ -23,12 +23,12 @@
         <div class="creds flex flex-col gap-4">
             <label class="flex flex-col gap-1">
                 <span class="">Email</span>
-                <input name="email" class="px-2 py-1 border border-gray-300 rounded" placeholder="Enter your email" type="email">
+                <input value="{{Illuminate\Support\Facades\Cookie::get('logged_email') !== null ? Illuminate\Support\Facades\Cookie::get('logged_email') : ""}}" name="email" class="px-2 py-1 border border-gray-300 rounded" placeholder="Enter your email" type="email">
             </label>
 
             <label class="flex flex-col gap-1">
                 <span class="">Password</span>
-                <input name="password" class="px-2 py-1 border border-gray-300 rounded" placeholder="Enter your password" type="password">
+                <input value="{{Illuminate\Support\Facades\Cookie::get('logged_password') !== null ?Illuminate\Support\Facades\Cookie::get('logged_password') : ""}}" name="password" class="px-2 py-1 border border-gray-300 rounded" placeholder="Enter your password" type="password">
             </label>
 
             <label class="flex gap-2">

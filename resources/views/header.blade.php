@@ -11,20 +11,24 @@
                 </div>
             </div>
         </div>
+        @if(\Illuminate\Support\Facades\Auth::user() && \Illuminate\Support\Facades\Auth::user()->role == "Admin")
         <a href="{{url('./product/manage')}}" class="text-gray-400">Manage Products</a>
+        @endif
     </div>
     <div class="flex gap-3">
 
 
         <div class="flex gap-3">
             @if( auth()->check())
-                <a class="nav-link" href="#">{{ auth()->user()->name}}</a>
+                <a class="nav-link" href="{{url('./profile')}}">{{ auth()->user()->name}}</a>
+                @if( auth()->user()->role == "User")
                 <div class="">
                     <a href={{url('/cart')}}>Cart</a>
                 </div>
                 <div class="">
                     <a href={{url('/history')}}>History</a>
                 </div>
+                @endif
                 <a href="{{url("/logout")}}">Logout</a>
             @else
                 <a href="{{url("/login")}}">Login</a>

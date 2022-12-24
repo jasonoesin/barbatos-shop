@@ -4,7 +4,24 @@
 
 @section('content')
 
-<div class="w-full h-[110vh] flex justify-center items-center bg-gray-300">
+<div class="w-full h-[110vh] flex justify-center items-center bg-gray-300 flex-col gap-4">
+        <div class="w-[50rem]">
+            <a href="{{url("./product/manage")}}" class="bg-gray-400 w-fit  px-4 py-2">
+                Back
+            </a>
+        </div>
+
+        {{--  if Error Exists --}}
+        @if ($errors->any())
+            <div class="bg-red-300 w-[30rem] mb-5 rounded px-4 py-2">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form enctype="multipart/form-data" method="post" action="{{url("./product")}}" class="flex flex-col gap-3 w-[50rem] max-h-[1rem]] bg-gray-100 p-4 overflow-hidden drop-shadow-lg">
             @csrf
             <div class="font-bold">Add Product</div>
